@@ -1,11 +1,11 @@
 function Cat(name) {
     this.name = name;
-    this.foodAmount = 50;
+    foodAmount = 50;
     this.feed = function() {
-        console.log('Насыпаем в миску ',this.formatFoodAmount(),' корма');
+        console.log('Насыпаем в миску ' + formatFoodAmount() + ' корма');
     };
-    this.formatFoodAmount = function(){
-        return this.foodAmount + '.гр'
+    function formatFoodAmount(){
+        return foodAmount + ' гр.'
     }
 }
 var barsik = new Cat('Барсик');
@@ -14,22 +14,22 @@ barsik = null;
 
 function Cat(name) {
     this.name = name;
-    this.foodAmount = 50;
+    foodAmount = 50;
     this.feed = function() {
-        console.log('Насыпаем в миску ',this.formatFoodAmount(),' корма');
+        console.log('Насыпаем в миску ' + this.dailyNorm() + ' корма');
     };
-    this.formatFoodAmount = function(){
-        return this.foodAmount + '.гр'
+    function formatFoodAmount(){
+        return foodAmount + ' гр.'
     }
     this.dailyNorm = function(amount){
-        if (!arguments.length) return this.formatFoodAmount();
+        if (!arguments.length) return formatFoodAmount();
         if (amount < 50){
             throw new Error ('Слишком мало!Котик останется голодный');
         }
         if (amount > 100){
             throw new Error ('Слишком много! Котик растолстеет');
         }
-        this.foodAmount = amount;
+        foodAmount = amount;
     }
 }
 var barsik = new Cat('Барсик');
