@@ -9,35 +9,25 @@ function foundPositive(numbers){
     });
 }
 function isPalindrom(str) {
-    if (str.toLowerCase().split('').reverse().join('') === str.toLowerCase()) {
-        return true;
-    } else {
-        return false;
-    }
+    return str.toLowerCase().split('').reverse().join('') === str.toLowerCase()
 }
+
 function areAnagrams(str1, str2) {
-    if (str1.length !== str2.length)
-        return false;
-    if (str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('')) {
-        return true;
-    } else {
-        return false;
-    }
+    return (str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join(''))
 }
 function divideArr(arr, n) {
-    do {
+    while (arr.length > n) {
         console.log(arr.splice(0, n))
     }
-    while (arr.length > n)
     console.log(arr);
 }
 function degreeTwo(number) {
-    var sum = 2;
+    var sum = 1;
     while (number) {
         if (sum >= number) {
             break;
         }
         sum *= 2;
     } 
-    return (sum == number) ? true : false;
+    return (sum == number);
 }
