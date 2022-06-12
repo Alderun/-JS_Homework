@@ -24,13 +24,10 @@ function validation() {
         btn.disabled = true;
     } else if (inp1 == 0 && inp2 == 0) {
         btn.disabled = true;
+    } else if((Number.isInteger(inp1)) && Number.isInteger(inp2)){
+        btn.disabled = true;
     } else {
         btn.disabled = false;
-    }
-    if (event.key == 'Backspace') {
-        if (div.classList.contains('tab')) {
-            document.location.reload()
-        }
     }
 }
 
